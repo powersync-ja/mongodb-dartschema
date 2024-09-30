@@ -1,0 +1,18 @@
+{
+  "name": "mongodb-script",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "generateSchema": "npx tsx run.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@powersync/service-sync-rules": "^0.18.3",
+    "dotenv": "^16.4.5",
+    "mongodb": "^6.9.0"
+  }
+}
