@@ -66,7 +66,7 @@ export class MongoDBSchemaDiscovery {
         for (const document of documents) {
             for (const key in document) {
                 const value = document[key];
-                const type = this.getMongoDBType(value);
+                const type = this.getType(value);
 
                 columns.push({
                     name: key,
@@ -79,7 +79,7 @@ export class MongoDBSchemaDiscovery {
         return uniqueColumns;
     }
 
-    private getMongoDBType(value: any): string {
+    private getType(value: any): string {
         if (typeof value === 'string') return 'string'
         if (typeof value === 'number') {
             if (Number.isInteger(value)) return 'integer'
