@@ -5,6 +5,9 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
+    "generateDartSchema": "SCHEMA_LANGUAGE=dart npx tsx run.ts",
+    "generateJsSchema": "SCHEMA_LANGUAGE=js npx tsx run.ts",
+    "generateTsSchema": "SCHEMA_LANGUAGE=ts npx tsx run.ts",
     "generateSchema": "npx tsx run.ts"
   },
   "keywords": [],
