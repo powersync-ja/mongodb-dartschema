@@ -1,6 +1,6 @@
-# MongoDB Schema to Dart Schema
+# MongoDB Schema to PowerSync Schema
 
-This repo provides a method to generate Dart Schema from MongoDb
+This repo provides a method to generate valid PowerSync schema from MongoDb
 
 ## How to generate schema
 
@@ -9,9 +9,17 @@ This repo provides a method to generate Dart Schema from MongoDb
 * Run `cp .env.template .env` to create a .env file
 * Populate `.env` file with your MongoDB `URL` and `DB_NAME`
 * Copy your sync rules to `sync-rules.yaml`
-* Run `pnpm generateSchema`
 
-You should see output similar to the following:
+For **Dart**:
+* Run `pnpm generateDartSchema`
+
+For **TypeScript**:
+* Run `pnpm generateTsSchema`
+
+For **JavaScript**:
+* Run `pnpm generateJsSchema`
+
+You should see output similar to the following (if dart generation was used):
 
 ```dart
 Schema([
@@ -33,7 +41,7 @@ Schema([
 ### Known Limitations
 
 * This has only been minimally tested and therefore the output should be reviewed to confirm correctness.
-* This only works for Dart Schema at present.
+* This only generates schema for Dart, JavaScript and Typescript at present.
 * None of the code has been optimized for performance.
 * `NumberDecimals` are converted to `text` and need to be manually adjusted to `real`.
 
@@ -44,7 +52,7 @@ This assumes you have [Docker](https://www.docker.com/products/docker-desktop/) 
 * Run `pnpm i`
 * `cp .env.template .env`
 * Run `./setup_mongodb.sh`
-* Run `pnpm generateSchema`
+* Run `pnpm generateDartSchema`
 
 You should see the following output:
 
